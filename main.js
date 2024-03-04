@@ -15,7 +15,7 @@ function createMainWindow() {
     mainWindow.webContents.openDevTools()
   }
 
-  mainWindow.loadFile(path.join(__dirname, './rendere/index.html'))
+  mainWindow.loadFile(path.join(__dirname, './renderer/index.html'))
 }
 
 app.whenReady().then(() => {
