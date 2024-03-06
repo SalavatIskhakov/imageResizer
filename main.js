@@ -15,7 +15,7 @@ function createMainWindow() {
     mainWindow.webContents.openDevTools()
   }
 
-  mainWindow.loadFile(path.join(__dirname, './renderer/about.html'))
+  mainWindow.loadFile(path.join(__dirname, './renderer/index.html'))
 }
 
 function createAboutWindow() {
@@ -25,7 +25,7 @@ function createAboutWindow() {
     height: 300,
   })
 
-  aboutWindow.loadFile(path.join(__dirname, './renderer/index.html'))
+  aboutWindow.loadFile(path.join(__dirname, './renderer/about.html'))
 }
 
 app.whenReady().then(() => {
