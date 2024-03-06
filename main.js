@@ -9,6 +9,11 @@ function createMainWindow() {
     title: 'Image Resizer',
     width: isDev ? 1000 : 500,
     height: 600,
+    webPreferences: {
+      contextIsolation: true,
+      nodeIntegration: true,
+      preload: path.join(__dirname, 'preload.js')
+    },
   })
 
   if (isDev) {

@@ -13,6 +13,14 @@ function loadImage(e) {
     return
   }
 
+  const image = new Image()
+  image.src = URL.createObjectURL(file)
+  image.onload = function () {
+    widthInput.value = this.width
+    heightInput.value = this.height
+    outputPath.innerText = path.join(os.homedir(), 'imageResizer')
+  }
+
   form.style.display = 'block'
   filename.innerText = file.name
 }
