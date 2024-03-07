@@ -25,6 +25,23 @@ function loadImage(e) {
   filename.innerText = file.name
 }
 
+function sendImage(e) {
+  e.preventDefault()
+
+  const width = widthInput.value
+  const height = heightInput.value
+
+  if (!img.files[0]) {
+    alertError('Please upload an image')
+    return
+  }
+
+  if (width === '' || height === '') {
+    alertError('Please fill in a height and width')
+    return
+  }
+}
+
 function isFileImage(file) {
   const acceptedImageTypes = ['image/gif', 'image/jpeg', 'image/png']
   return file && acceptedImageTypes.includes(file['type'])
@@ -57,3 +74,4 @@ function alertSucces(message) {
 }
 
 img.addEventListener('change', loadImage)
+form.addEventListener('submit', sendImage)
